@@ -93,7 +93,11 @@ public class MainActivity extends AppCompatActivity {
                 Request request = new Request(CoAP.Code.GET);
                 request.setURI(uri);
                 CoapResponse response = client.advanced(request);
-                System.out.println("Coap response: " + response.getResponseText());
+                if (response == null) {
+                    System.out.println("Coap response: " + null);
+                } else {
+                    System.out.println("Coap response: " + response.getResponseText());
+                }
             } catch (Exception exception) {
                 exception.printStackTrace();
             }

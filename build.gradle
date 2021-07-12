@@ -12,6 +12,16 @@ buildscript {
     }
 }
 
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url "https://repo.eclipse.org/content/repositories/californium/"
+        }
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
